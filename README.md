@@ -1,2 +1,2 @@
-# school-1
-The school site
+#School-1
+The develoment of the official school's website

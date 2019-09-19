@@ -77,3 +77,28 @@
     invert(97%) sepia(3%) saturate(0%)
     hue-rotate(209deg) brightness(102%) contrast(102%);
 }
+
+@media screen and (max-width: 980px) {
+  .footer .container {
+    max-width: 320px
+  }
+
+  .footer-box {
+    flex-direction: column;
+    padding: 30px 0;
+  }
+
+  .footer-item:not(:last-child) {
+    margin-bottom: 40px;
+  }
+
+  .footer-box .footer-item:not(:last-child) > p::after {
+    top: initial;
+    left: initial;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    height: 1px;
+    width: 33%;
+  }
+}

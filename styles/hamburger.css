@@ -1,0 +1,109 @@
+.hamburger {
+  display: block;
+  width: 60px;
+  height: 60px;
+  transition-duration: 0.5s;
+}
+
+.hamburger .icon-left,
+.hamburger .icon-right {
+  transform: translateX(15px);
+}
+
+.hamburger .icon-left {
+  transition-duration: 0.5s;
+  position: absolute;
+  height: 3px;
+  width: 15px;
+  top: 30px;
+  background-color: #212121;
+  left: 0px;
+}
+
+.hamburger .icon-left:before {
+  transition-duration: 0.5s;
+  position: absolute;
+  width: 15px;
+  height: 3px;
+  background-color: #212121;
+  content: "";
+  top: -10px;
+}
+
+.hamburger .icon-left:after {
+  transition-duration: 0.5s;
+  position: absolute;
+  width: 15px;
+  height: 3px;
+  background-color: #212121;
+  content: "";
+  top: 10px;
+}
+
+.hamburger .icon-left:hover {
+  cursor: pointer;
+}
+
+.hamburger .icon-right {
+  transition-duration: 0.5s;
+  position: absolute;
+  height: 3px;
+  width: 15px;
+  top: 30px;
+  background-color: #212121;
+  left: 15px;
+}
+
+.hamburger .icon-right:before {
+  transition-duration: 0.5s;
+  position: absolute;
+  width: 15px;
+  height: 3px;
+  background-color: #212121;
+  content: "";
+  top: -10px;
+}
+
+.hamburger .icon-right:after {
+  transition-duration: 0.5s;
+  position: absolute;
+  width: 15px;
+  height: 3px;
+  background-color: #212121;
+  content: "";
+  top: 10px;
+}
+
+.hamburger.open .icon-left {
+  transition-duration: 0.5s;
+  background: transparent;
+}
+
+.hamburger.open .icon-left:before {
+  -webkit-transform: rotateZ(40deg) scaleX(1.2) translate(3px, 3px);
+          transform: rotateZ(40deg) scaleX(1.2) translate(3px, 3px);
+}
+
+.hamburger.open .icon-left:after {
+  -webkit-transform: rotateZ(-40deg) scaleX(1.2) translate(3px, -3px);
+          transform: rotateZ(-40deg) scaleX(1.2) translate(3px, -3px);
+}
+
+.hamburger.open .icon-right {
+  transition-duration: 0.5s;
+  background: transparent;
+}
+
+.hamburger.open .icon-right:before {
+  -webkit-transform: rotateZ(-40deg) scaleX(1.2) translate(-3px, 3px);
+          transform: rotateZ(-40deg) scaleX(1.2) translate(-3px, 3px);
+}
+
+.hamburger.open .icon-right:after {
+  -webkit-transform: rotateZ(40deg) scaleX(1.2) translate(-3px, -3px);
+          transform: rotateZ(40deg) scaleX(1.2) translate(-3px, -3px);
+}
+
+.hamburger:hover {
+  cursor: pointer;
+}

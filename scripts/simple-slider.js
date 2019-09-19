@@ -1,5 +1,5 @@
 //@ts-check
-(function runSimpleSlider() {
+(function runSimpleSliderJs() {
   //@ts-ignore
   window.createSimpleSlider = function createSimpleSlider(props) {
     const { id, imageUrls, rate, height } = props;

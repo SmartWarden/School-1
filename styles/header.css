@@ -1,0 +1,86 @@
+.header {
+  background: #F3F3F3;
+}
+
+/* TOPBAR START */
+
+.topbar {
+  position: fixed;
+  z-index: 1;
+  display: block;
+  width: 100%;
+  top: 0;
+  left: 0;
+  background: #343F64;
+  display: flex;
+  font-family:
+    helvetica-w01-roman,
+    helvetica-w02-roman,
+    helvetica-lt-w10-roman,
+    sans-serif;
+}
+
+.topbar .container {
+  width: 930px;
+}
+
+.topbar .nav-items {
+  display: flex;
+  margin: 9px 0 11px 230px;
+}
+
+.topbar .navigation a {
+  color: #fff;
+  text-align: center;
+  line-height: 50px;
+  display: inline-block;
+  padding: 0 15px;
+  text-transform: uppercase;
+  font-size: 13px;
+  transition: color 0.4s ease 0s;
+}
+
+.topbar .navigation a:hover {
+  color: #69718B;
+}
+
+.topbar .navigation a.active {
+  color: #E9DB89;
+}
+
+.topbar .logo-box {
+  position: relative;
+}
+
+.topbar .logo {
+  background: #fff;
+  max-width: 230px;
+  position: absolute;
+  padding: 13px 38px 22px;
+}
+
+.topbar .logo h1 {
+  text-transform: uppercase;
+  font-size: 14px;
+  color: #343f64;
+  font-weight: 400;
+  font-family:
+    helvetica-w01-bold,
+    helvetica-w02-bold,
+    helvetica-lt-w10-bold,
+    sans-serif;
+  text-align: center;
+
+}
+
+.topbar .logo svg {
+  fill: #343f64;
+}
+
+/* TOPBAR END*/
+
+/* HEADER-SLIDER START*/
+.simple-slider {
+  height: 737px;
+  background: #CECECE;
+}

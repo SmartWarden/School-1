@@ -1,0 +1,20 @@
+.welcome-box {
+  position: relative;
+  top: -140px;
+  width: 920px;
+  display: flex;
+  margin: auto;
+}
+
+.welcome-box-item {
+  flex: 1 1 100%;
+  padding: 63px;
+}
+
+.welcome-phrase-box {
+  background: #fff;
+}
+
+.last-events {
+  background: #343F64
+}

@@ -2,14 +2,14 @@
 (function runSimpleSliderJs() {
   //@ts-ignore
   window.createSimpleSlider = function createSimpleSlider(props) {
-    const { id, imageUrls, rate, height } = props;
+    const { id, imageUrls, rate, cssHeight } = props;
     // check params
 
     const slider = document.getElementById(id);
     const downloadedImages = [];
 
-    if (height != null) {
-      slider.style.height = `${height}px`;
+    if (cssHeight != null) {
+      slider.style.height = cssHeight;
     }
 
     imageUrls.forEach((uri) => {

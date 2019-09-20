@@ -91,14 +91,15 @@
   <!-- SLIDER_SECTION start -->
   <header id="slider-section" class="slider-section">
     <div class="container">
-      <div id="simple-slider" class="simple-slider" height="737">
+      <div id="simple-slider" class="simple-slider">
         <!-- Set default light image or just color -->
       </div>
+      <div class="spacer"></div>
     </div>
   </header>
   <!-- SLIDER_SECTION end -->
 
- <!--  <section id="welcome-section" class="welcome-section">
+  <section id="welcome-section" class="welcome-section">
     <div class="container">
       <div class="welcome-box">
         <div class="welcome-box-item welcome-phrase-box">
@@ -130,13 +131,14 @@
         </div>
       </div>
     </div>
-  </section> -->
+  </section>
 
   <section id="last-news" class="last-news">
     <div class="container">
+      <h2 class="heading">Новости и события</h2>
       <ul class="last-posts">
         <li class="last-posts-item">
-          <!-- post -->
+          <div class="post"></div>
         </li>
       </ul>
     </div>
@@ -175,19 +177,18 @@
   <!-- SCRIPTS -->
   <script src="scripts/simple-slider.js"></script>
   <script src="scripts/hamburger.js"></script>
+  <script src="scripts/common.js"></script>
   <script>
     // Example usage
     createSimpleSlider({
       id: 'simple-slider',
       imageUrls: [
-        'https://picsum.photos/1905/737?t=' + performance.now(),
-        'https://picsum.photos/1905/737?t=' + performance.now(),
-        'https://picsum.photos/1905/737?t=' + performance.now(),
+        'https://picsum.photos/1905/1440?t=' + performance.now(),
+        'https://picsum.photos/1905/1440?t=' + performance.now(),
+        'https://picsum.photos/1905/1440?t=' + performance.now(),
       ],
       rate: 3000,
-      height: 737,
     });
-
 
     // Hamburger
     createHamburger({

@@ -2,8 +2,13 @@ body {
   background: #F1F1F1;
 }
 
+
+/* HEADER-SLIDER START*/
 .simple-slider {
+  background: #CECECE;
   display: flex;
+  position: absolute;
+  height: 737px;
 }
 
 .simple-slider > .active {
@@ -13,14 +18,15 @@ body {
   object-position: center;
 }
 
+.slider-section .spacer {
+  height: 670px;
+}
 
 /* WELCOME_BOX start */
 .welcome-box {
-  position: relative;
-  top: -140px;
-  width: 920px;
-  display: flex;
+  max-width: 920px;
   margin: auto;
+  display: flex;
   font-size: 14px;
   font-family:
     helvetica-w01-roman,
@@ -111,3 +117,117 @@ body {
   background: #F4EAB1;
 }
 /* WELCOME_BOX end */
+
+/* LAST_NEWS&EVENTS start */
+.last-news .container {
+  max-width: 970px;
+}
+
+.last-news .heading {
+  color: #343F64;
+  margin: 70px 0 26px;
+  text-align: center;
+}
+/* LAST_NEWS&EVENTS end */
+
+@media screen and (max-width: 970px) {
+  .topbar .logo-box {
+    left: 40px;
+  }
+
+  .welcome-box {
+    flex-direction: column;
+    margin-left: 20px;
+    margin-right: 20px;
+  }
+
+  .welcome-box-item {
+    padding: 40px;
+  }
+
+  .welcome-phrase-box h2 {
+    margin-top: 0;
+  }
+
+  .welcome-phrase-box img {
+    float: left;
+    padding-right: 30px;
+  }
+
+  .welcome-phrase-box a {
+    float: right;
+  }
+
+  .last-events h2 {
+    margin-bottom: 20px;
+  }
+
+  .last-events-list {
+    display: flex;
+    flex-direction: row;
+  }
+
+  .last-events-list .small-event-box {
+    margin: 10px;
+  }
+
+  /* SLIDER media */
+  .slider-section .simple-slider {
+    height: 430px;
+  }
+
+  .slider-section .spacer {
+    height: 320px;
+  }
+}
+
+@media screen and (max-width: 760px) {
+  .topbar .logo-box {
+    left: 0;
+  }
+
+  .welcome-phrase-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .welcome-phrase-box img {
+    float: initial;
+    margin-bottom: 20px;
+    max-width: 100%;
+    padding: 0;
+  }
+
+  .welcome-phrase-box h2 {
+    order: -1;
+    text-align: center;
+  }
+
+  .welcome-phrase-box a {
+    float: initial;
+    align-self: flex-end;
+  }
+}
+
+@media screen and (max-width: 660px) {
+  .welcome-box-item {
+    padding: 35px;
+  }
+
+  .welcome-box h2 {
+    font-size: 22px;
+  }
+
+  .last-events-list {
+    display: block;
+  }
+
+  .last-events .small-event-box {
+    margin: 0;
+  }
+
+  .last-events li:not(:last-child) .small-event-box {
+    margin-bottom: 30px;
+  }
+}

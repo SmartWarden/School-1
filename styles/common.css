@@ -9,6 +9,19 @@ body {
   font-size: 10px;
 }
 
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 400;
+  font-family:
+    helvetica-w01-bold,
+    helvetica-w02-bold,
+    helvetica-lt-w10-bold,
+    sans-serif
+}
+
+h2 {
+  font-size: 26px;
+}
+
 ul, ol {
   list-style: none;
 }

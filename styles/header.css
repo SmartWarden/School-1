@@ -17,6 +17,7 @@
   left: 0;
   background: #343F64;
   display: flex;
+  box-shadow: 0px 0px 12px 0px rgba(0,0,0,.3);
   font-family:
     helvetica-w01-roman,
     helvetica-w02-roman,
@@ -83,12 +84,6 @@
 
 /* TOPBAR END*/
 
-/* HEADER-SLIDER START*/
-.simple-slider {
-  height: 737px;
-  background: #CECECE;
-}
-
 @media screen and (max-width: 930px) {
   .topbar .nav-items {
     margin: 9px 0 11px 150px;
@@ -123,7 +118,8 @@
 
   .topbar .navigation {
     margin: 50px 50px 0;
-    position: relative;
+    position: absolute;
+    width: calc(100% - 100px);
     background: rgba(52,63,100,.8);
     transform: scaleY(0);
     transform-origin: top;

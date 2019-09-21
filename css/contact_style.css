@@ -1,0 +1,113 @@
+/*шрифты*/
+
+h1,h2,h3,h4{
+	font-family: Georgia;
+	color: #343F64;
+}
+
+h5{
+	font-family: "Times New Roman";
+	font-size: 20px;
+	color: #383632;
+}
+
+p{
+  font-family: LagodaClassic;
+  font-size: 19px;
+  color: #343F64;
+}
+
+a{
+	font-family: Times New Roman;
+	font-size: 19px;
+	color: #343f64;
+	text-decoration: none;
+}
+
+/*style*/
+
+body{
+	margin: 0;
+	padding: 0;
+	background: #fff;
+}
+
+header{
+	width: 100%;
+	height: 40vh;
+	background: url(../img/baim-hanif-pYWuOMhtc6k-unsplash.jpg) no-repeat center top / cover;
+}
+
+.container{
+	margin-top: 50px;
+	margin-right: 27vw;
+	margin-left: 27vw;
+	width: 38vw;
+}
+
+
+@media(max-width: 720px){
+	.container{
+		margin-right: 20vw;
+		margin-left: 20vw;
+		width: 40vw; 
+	}
+}
+
+.content_box{
+	justify-content: center;
+	text-align: center;
+	margin: auto;
+}
+
+
+.contact_tit{
+	min-width: 300px;
+	justify-content: center;
+	text-align: center;
+	margin: auto;
+}
+
+.contact_content{
+	display: block;
+	
+}
+
+@media( max-width: 720px){
+	.contact_content{
+		width: 50vw;
+	}
+}
+
+.forms_box{
+	margin-top: 50px;
+	margin-left: -5vw;
+	justify-content: center;
+	text-align: center;
+}
+
+.left_box{
+	width: 20vw;
+	float: left;
+}
+
+textarea{
+	margin-top: 10px;
+	max-height: 15vh;
+	max-width: 19vw;
+	min-height: 15vh;
+	min-width: 19vw;
+}
+
+input{
+	max-height: 22px;
+	max-width: 19vw;
+	min-height: 22px;
+	min-width: 19vw
+}
+
+.right_box{
+	width: 20vw;
+	background: pink;
+	float: right;
+}

@@ -9,6 +9,7 @@ body {
   display: flex;
   position: absolute;
   height: 737px;
+  width: 100%;
 }
 
 .simple-slider > .active {

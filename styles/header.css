@@ -157,3 +157,16 @@
     background: rgba(184,184,184,0.3)
   }
 }
+
+@media screen and (max-width: 970px) {
+  .topbar .logo-box {
+    left: 40px;
+  }
+}
+
+@media screen and (max-width: 760px) {
+  .topbar .logo-box {
+    left: 0;
+  }
+}
+

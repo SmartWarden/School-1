@@ -6,4 +6,13 @@ window.addEventListener('load', () => {
 
   window.addEventListener('resize', setBodyPadding);
   setBodyPadding();
+
+
+  // Hamburger
+  createHamburger({
+    burgerId: 'hamburger',
+    navId: 'navigation',
+    classBurgerActive: 'open',
+    classNavActive: 'show',
+  });
 });

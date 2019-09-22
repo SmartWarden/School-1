@@ -17,6 +17,17 @@ body {
   height: 100%;
   object-fit: cover;
   object-position: center;
+  animation: fadeIn 1s;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: .2;
+  }
+
+  100% {
+    opacity: 1;
+  }
 }
 
 .slider-section .spacer {

@@ -18,8 +18,8 @@ h5 {
 /*style*/
 
 .header-image {
-  height: 55vh;
-  background: url(../img/baim-hanif-pYWuOMhtc6k-unsplash.jpg) no-repeat center top / cover;
+  height: 60vh;
+  background: url(../img/baim-hanif-pYWuOMhtc6k-unsplash.jpg) no-repeat center / cover;
 }
 
 .header-image img {

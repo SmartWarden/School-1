@@ -40,6 +40,7 @@
       const img = new Image();
       img.src = url;
       img.setAttribute('data-url-full', fullUrl);
+      img.setAttribute('data-desc', desc);
       return img;
     });
   }
@@ -47,8 +48,15 @@
   function popupImage(el, image) {
     const img = new Image();
     img.src = image.getAttribute('data-url-full');
-    el.children[0].innerHTML = '';
-    el.children[0].appendChild(img);
+
+    const box = el.children[0];
+
+    box.children[0].innerHTML = '';
+    box.children[1].innerHTML = '';
+
+    box.children[0].appendChild(img);
+    img.onload = () =>
+      box.children[1].innerText = image.getAttribute('data-desc');
     el.classList.add('show');
   }
 

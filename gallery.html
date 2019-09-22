@@ -141,8 +141,10 @@
   <!-- FOOTER end -->
 
   <div class="gallery-popup" id="popup">
-    <div class="popup-image-box"></div>
-    <div class="popup-image-desc"></div>
+    <div class="popup-wrapper">
+      <div class="popup-img-box"></div>
+      <div class="popup-desc"></div>
+    </div>
   </div>
 
   <script src="scripts/hamburger.js"></script>
@@ -157,17 +159,18 @@
     }
 
     for (let i = 0; i < 25; i++) {
-      const width = getRandomSize(120.0, 720.0);
-      const height = getRandomSize(72.0, 480.0);
+      const width = 400 + getRandomSize(120.0, 720.0);
+      const height = 200 + getRandomSize(72.0, 480.0);
       const url = 'https://picsum.photos/' + width + '/' + height + '?t=' + performance.now();
       const fullUrl = 'https://picsum.photos/' + (width * 2) + '/' + (height * 2) + '?t=' + performance.now();
-      imagesData.push({ url, fullUrl });
+      const desc = 'Lorem ipsum dolor sit amet, consectetur adipisicing elit.';
+      imagesData.push({ url, fullUrl, desc });
     }
 
     createGallery({
       id: 'gallery',
-      imagesData,
       popupId: 'popup',
+      imagesData,
     });
 
     // CUSTOM USAGE
@@ -178,6 +181,7 @@
     //     {
     //       url: 'path/to/small/image',
     //       fullUrl: 'path/to/full/image',
+    //       desc: 'This text is description of the image',
     //     },
     //     // ..
     //   ],

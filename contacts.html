@@ -42,8 +42,7 @@
   <link rel="stylesheet" href="styles/footer.css">
   <link rel="stylesheet" href="styles/hamburger.css">
   <link rel="stylesheet" href="styles/common.css">
-  <link rel="stylesheet" href="styles/gallery.css">
-  <link rel="stylesheet" href="styles/home.css">
+  <link rel="stylesheet" href="styles/contacts.css">
 
   <!-- link rel="icon" href="favicon-16.png" sizes="16x16" type="image/png" -->
   <!-- link rel="icon" href="favicon-32.png" sizes="32x32" type="image/png" -->
@@ -90,24 +89,60 @@
   </header>
   <!-- HEADER end -->
 
-  <header id="header-banner" class="header-banner"></header>
+  <header id="header-banner" class="header-banner">
+    <div class="mapouter"><div class="gmap_canvas"><iframe width="100%" height="100%" id="gmap_canvas" src="https://maps.google.com/maps?q=Toytepa%201%20elementary%20school&t=&z=15&ie=UTF8&iwloc=&output=embed&hl=ru" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe></div><style>.mapouter{position:relative;text-align:right;height:100%;width:100%;}.gmap_canvas {overflow:hidden;background:none!important;height:100%;width:100%;}</style></div>
+  </header>
 
-  <main id="all-container" class="gallery-section">
-    <section id="gallery-section">
-      <div class="container">
-        <header class="gallery-heading-box">
-          <h2>Школьная галерея</h2>
-        </header>
-        <section id="gallery" class="gallery">
-          <!--
-            <div class="photo">
-              <img class="photo-img" src="path/to/photo" alt="">
-              <p class="photo-desc">Lorem ipsum dolor sit.</p>
-            </div>
-          -->
-        </section>
+  <main id="content" class="content-section">
+    <div class="container">
+      <div class="content_box">
+        <div class="contact_tit">
+          <h2>
+            Свяжитесь с нами
+          </h2>
+        </div>
+        <!--
+        <div class="contact_content">
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+            tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+            quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+            consequat.
+          </p>
+        </div>
+        -->
       </div>
-    </section>
+
+      <div class="forms_box">
+        <div class="left_box">
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+            tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+            quis.
+          </p>
+          <form class="form">
+            <input type="text" name="name" placeholder="Ваше имя *" required>
+            <input type="email" name="email" placeholder="Ваша e-почта *" required>
+            <input type="text" name="subject" placeholder="Тема">
+            <textarea placeholder="Письмо *" required></textarea>
+            <button type="submit" class="clearfix">Отправить</button>
+          </form>
+        </div>
+
+        <div class="right_box">
+          <p class="contact-declaration">
+            Вы можете задать нам любой вопрос по телефону: +7 (495) 000-00-00 (с 9:00 до 18:00).
+          </p>
+
+          <div class="contact-details">
+            <div class="contact-address">ул. Арбат, 1а, Москва, 119019, Россия</div>
+            <div class="contact-tel">Телефон: +99899 999-99-99</div>
+            <div class="contact-email">Email: firstschool@gmail.com</div>
+          </div>
+
+        </div>
+      </div>
+    </div>
   </main>
 
   <!-- FOOTER -->
@@ -140,49 +175,9 @@
   </footer>
   <!-- FOOTER end -->
 
-  <div class="gallery-popup" id="popup">
-    <div class="popup-image-box"></div>
-    <div class="popup-image-desc"></div>
-  </div>
-
+  <!-- SCRIPTS -->
   <script src="scripts/hamburger.js"></script>
   <script src="scripts/common.js"></script>
-  <script src="scripts/gallery.js"></script>
-  <script>
-    // RANDOM IMAGES
-    const imagesData = [];
-
-    function getRandomSize(min, max) {
-      return Math.round(Math.random() * (max - min) + min);
-    }
-
-    for (let i = 0; i < 25; i++) {
-      const width = getRandomSize(120.0, 720.0);
-      const height = getRandomSize(72.0, 480.0);
-      const url = 'https://picsum.photos/' + width + '/' + height + '?t=' + performance.now();
-      const fullUrl = 'https://picsum.photos/' + (width * 2) + '/' + (height * 2) + '?t=' + performance.now();
-      imagesData.push({ url, fullUrl });
-    }
-
-    createGallery({
-      id: 'gallery',
-      imagesData,
-      popupId: 'popup',
-    });
-
-    // CUSTOM USAGE
-    // createGallery({
-    //   id: 'gallery',
-    //   popupId: 'popup',
-    //   imagesData: [
-    //     {
-    //       url: 'path/to/small/image',
-    //       fullUrl: 'path/to/full/image',
-    //     },
-    //     // ..
-    //   ],
-    // });
-  </script>
 </body>
 
 </html>

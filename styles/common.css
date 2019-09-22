@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700&display=swap&subset=cyrillic');
+
 * {
   margin: 0;
   padding: 0;
@@ -5,17 +7,13 @@
 }
 
 body {
-  font-family: Helvetica-W01-Roman, Aria;
+  font-family: 'Roboto', 'Helvetica', 'Arimo', sans-serif;
   font-size: 10px;
 }
 
 h1, h2, h3, h4, h5, h6 {
   font-weight: 400;
-  font-family:
-    helvetica-w01-bold,
-    helvetica-w02-bold,
-    helvetica-lt-w10-bold,
-    sans-serif
+  font-weight: bold;
 }
 
 h2 {
@@ -39,4 +37,12 @@ img {
 .container {
   margin: auto;
   position: relative;
+}
+
+.clearfix:after {
+  content: " ";
+  visibility: hidden;
+  display: block;
+  height: 0;
+  clear: both;
 }

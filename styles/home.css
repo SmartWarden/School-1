@@ -29,25 +29,11 @@ body {
   margin: auto;
   display: flex;
   font-size: 14px;
-  font-family:
-    helvetica-w01-roman,
-    helvetica-w02-roman,
-    helvetica-lt-w10-roman,
-    sans-serif;
 }
 
 .welcome-box-item {
   flex: 1 1 100%;
   padding: 63px;
-}
-
-.welcome-box-item h2 {
-  font-weight: 400;
-  font-family:
-    helvetica-w01-bold,
-    helvetica-w02-bold,
-    helvetica-lt-w10-bold,
-    sans-serif;
 }
 
 .welcome-phrase-box {
@@ -132,10 +118,6 @@ body {
 /* LAST_NEWS&EVENTS end */
 
 @media screen and (max-width: 970px) {
-  .topbar .logo-box {
-    left: 40px;
-  }
-
   .welcome-box {
     flex-direction: column;
     margin-left: 20px;
@@ -183,10 +165,6 @@ body {
 }
 
 @media screen and (max-width: 760px) {
-  .topbar .logo-box {
-    left: 0;
-  }
-
   .welcome-phrase-box {
     display: flex;
     flex-direction: column;

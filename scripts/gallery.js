@@ -3,45 +3,64 @@
   class ImageLoader {
     constructor(buffersize, maxAttempts) {
       this.queue = [];
-      this.buffersize = buffersize;
-      this.maxAttempts = maxAttempts;
+      this.buffersize = buffersize || 5;
+      this.maxAttempts = maxAttempts || 3;
     }
 
     addToQueue(url, importance=0, img, attempts=0) {
-      if (img == null) img = new Image;
       const queueEl = { img, url, importance };
       const { queue, maxAttempts } = this;
+      const that = this;
 
-      const remove = this._removeFromQueue.bind(null, img);
-      img.addEventListener('load', remove);
-      img.addEventListener('error', () => {
-        if (attempts > maxAttempts) {
-          console.error(`Image ${url} couldn't be loaded.`);
-          remove();
+      img.addEventListener('error', function onerror(err) {
+        img.removeEventListener('error', onerror);
+        that._removeFromQueue(img);
+
+        if (attempts >= maxAttempts - 1) {
+          console.log(`Image ${url} couldn't be loaded.`);
         } else {
-          this.addToQueue(url, importance, img, attempts + 1);
+          img.src = undefined;
+          that.addToQueue(url, importance, img, attempts + 1);
         }
       });
 
-      for (let i = 0, len = queue.length; i < len; i++) {
-        const current = queue[i];
-        if (current.importance < importance || i === len - 1) {
-          queue.splice(i, 0, queueEl);
-          break;
-        }
+      if (attempts === 0) {
+        img.addEventListener('load', function onload() {
+          img.removeEventListener('load', onload);
+          that._removeFromQueue(img);
+          that._load();
+        });
       }
+
+      const i = queue.findIndex((el) => el.importance < importance);
+      if (i === -1) queue.push(queueEl);
+      else queue.splice(i, 0, queueEl);
+
+      this._load();
     }
 
     _removeFromQueue(img) {
       const { queue } = this;
-      const i = queue.findIndex(img);
+      const i = queue.findIndex((el) => el.img === img);
       queue.splice(i, 1);
     }
 
     _load() {
-      
+      const { queue, buffersize, _load } = this;
+
+      queue
+        .slice(0, buffersize)
+        .forEach((el, i) => {
+          const { img, url } = el;
+          if (img.src) return;
+          img.src = url;
+        });
     }
   }
+
+  const imageLoader = new ImageLoader(5, 3);
+  //@ts-ignore
+  window.loader = imageLoader;
 
   function createGallery(props) {
     const { id, imagesData, popupId } = props;
@@ -80,17 +99,18 @@
   function buildImages(imagesData) {
     return imagesData.map((data) => {
       const { desc, url, fullUrl } = data;
-      const img = new Image();
-      img.src = url;
+      const img = new Image()
+      imageLoader.addToQueue(url, 0, img);
       img.setAttribute('data-url-full', fullUrl);
       img.setAttribute('data-desc', desc);
       return img;
     });
   }
 
-  function popupImage(el, image, attempts=0) {
+  function popupImage(el, image) {
     const img = new Image();
-    img.src = image.getAttribute('data-url-full');
+    const url = image.getAttribute('data-url-full');
+    imageLoader.addToQueue(url, 5, img);
 
     const box = el.children[0];
 
@@ -107,14 +127,6 @@
 
     imgBox.appendChild(img);
 
-    img.addEventListener('error', () => {
-      if (attempts >= 3) {
-        box.children[1].innerText = '';
-      } else {
-        popupImage(el, image, attempts + 1);
-      }
-    });
-
     onsizeload(img, () => {
       imgDesc.innerText = image.getAttribute('data-desc');
     });
@@ -129,18 +141,6 @@
         cb();
       }
     }, 10);
-  }
-
-  function detectScrollWidth() {
-    const div = document.createElement('div');
-    div.style.opacity = '0';
-    div.style.position = 'fixed';
-    div.style.zIndex = '-999';
-    div.style.overflow = 'scroll';
-    div.style.width = '100px';
-
-    document.body.appendChild(div);
-    return 100 - div.clientWidth;
   }
 
   //@ts-ignore

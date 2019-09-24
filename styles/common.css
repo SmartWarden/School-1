@@ -6,6 +6,10 @@
   box-sizing: border-box;
 }
 
+:focus {
+  outline: none;
+}
+
 body {
   font-family: 'Roboto', 'Helvetica', 'Arimo', sans-serif;
   font-size: 10px;

@@ -18,8 +18,8 @@ h5 {
 /*style*/
 
 .header-image {
-  height: 55vh;
-  background: url(../img/baim-hanif-pYWuOMhtc6k-unsplash.jpg) no-repeat center top / cover;
+  height: 60vh;
+  background: url(../img/baim-hanif-pYWuOMhtc6k-unsplash.jpg) no-repeat center / cover;
 }
 
 .header-image img {
@@ -288,18 +288,23 @@ section.director {
     color: #343F64;
     padding: 10px;
     margin: 0 5px;
+    position: relative;
   }
 
   #slider-control .slider-to-prev::after,
   #slider-control .slider-to-next::after {
     content: '→';
     display: block;
-    line-height: 10px;
     font-size: 60px;
+    position: absolute;
+    bottom: calc(-100% + 10px);
+    left: 30px;
   }
 
   #slider-control .slider-to-prev::after {
     content: '←';
+    left: initial;
+    right: 30px;
   }
 
   .history-block {

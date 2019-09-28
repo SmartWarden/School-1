@@ -43,14 +43,6 @@ img {
   position: relative;
 }
 
-.clearfix:after {
-  content: " ";
-  visibility: hidden;
-  display: block;
-  height: 0;
-  clear: both;
-}
-
 /* HEADER */
 .header {
   background: #F3F3F3;

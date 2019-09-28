@@ -300,6 +300,10 @@ img {
     margin-bottom: 40px;
   }
 
+  .footer-item p {
+    display: block;
+  }
+
   .footer-box .footer-item:not(:last-child) > p::after {
     top: initial;
     left: initial;

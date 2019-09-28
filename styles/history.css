@@ -101,6 +101,14 @@ section.director {
 
 /*director*/
 
+.director_img{
+  display: flex;
+  justify-content: flex-end;
+  margin: auto;
+  height: 286px;
+}
+
+
 .box_tit {
   text-align: center;
   margin-bottom: 40px;

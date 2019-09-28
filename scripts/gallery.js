@@ -59,8 +59,6 @@
   }
 
   const imageLoader = new ImageLoader(5, 3);
-  //@ts-ignore
-  window.loader = imageLoader;
 
   function createGallery(props) {
     const { id, imagesData, popupId } = props;

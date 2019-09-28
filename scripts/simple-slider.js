@@ -8,6 +8,9 @@
     const slider = document.getElementById(id);
     const downloadedImages = [];
 
+    let isLoadedFirst;
+    const promiseLoadFirst = new Promise((res) => isLoadedFirst = res);
+
     if (cssHeight != null) {
       slider.style.height = cssHeight;
     }
@@ -16,16 +19,27 @@
       const image = new Image();
 
       image.src = uri;
-      image.onload = (data) => downloadedImages.push(image);
+      image.onload = (data) => {
+        if (isLoadedFirst) {
+          isLoadedFirst();
+          isLoadedFirst = null;
+        }
+        downloadedImages.push(image)
+      };
     });
 
-    setInterval(() => {
+    function updateSlide() {
       clearElement(slider);
       if (downloadedImages.length) {
         const active = setActiveToNext(downloadedImages);
         slider.appendChild(active);
       }
-    }, rate);
+    }
+
+    promiseLoadFirst.then(() => {
+      updateSlide();
+      setInterval(updateSlide, rate);
+    });
   }
 
   function clearElement(el) {
